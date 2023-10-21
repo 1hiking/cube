@@ -76,4 +76,12 @@ window.addEventListener('resize', function () {
     camera.updateProjectionMatrix();
 });
 
-animate();
+if (WebGL.isWebGLAvailable()) {
+    animate();
+
+} else {
+
+    const warning = WebGL.getWebGLErrorMessage();
+    document.getElementById('container').appendChild(warning);
+
+}
