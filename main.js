@@ -27,18 +27,20 @@ function createCubes(number) {
     return cubes;
 }
 
-const cube = createCubes(3)
+const cube = createCubes(2)
 cube.forEach(cube => {
     scene.add(cube);
 });
 
 
-camera.position.z = 2;
-camera.position.y = 1;
-camera.rotation.x = -.5;
+camera.position.z = 4;
+camera.position.y = 0;
+camera.rotation.x = 0;
+
+
 
 const originX = 0;
-const originZ = 0;
+let originZ = 0;
 let angle = 1;
 const radius = 1;
 function animate() {
@@ -46,24 +48,32 @@ function animate() {
     requestAnimationFrame(animate);
     renderer.render(scene, camera);
     cube.forEach(cube => {
+        // Must be multiplied by time
+        // Credits to: https://gamedev.stackexchange.com/a/9610
         let X = originX + Math.cos(angle * time) * radius;
         let Z = originZ + Math.sin(angle * time) * radius;
+
 
         cube.position.x = X;
         cube.position.z = Z;
         cube.position.y = Math.sin(time) * 0.2;
         cube.rotateX(.01);
         cube.rotateY(.01);
-        cube.rotateY(.01)
+        cube.rotateY(.01);
+        console.log(cube.position.z);
 
     })
     stats.update();
 
 }
 
+
+
+
 window.addEventListener('resize', function () {
     renderer.setSize(window.innerWidth, window.innerHeight);
     camera.aspect = window.innerWidth / window.innerHeight;
     camera.updateProjectionMatrix();
 });
+
 animate();
