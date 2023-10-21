@@ -5,5 +5,22 @@
   },
   "devDependencies": {
     "vite": "^4.5.0"
-  }
+  },
+  "name": "cube",
+  "version": "1.0.0",
+  "main": "main.js",
+  "scripts": {
+    "test": "npx vite"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/1hiking/cube.git"
+  },
+  "author": "1hiking",
+  "license": "",
+  "bugs": {
+    "url": "https://github.com/1hiking/cube/issues"
+  },
+  "homepage": "https://github.com/1hiking/cube#readme",
+  "description": "Cube demo"
 }
