@@ -3,6 +3,8 @@
 import * as THREE from 'three';
 import { World } from 'cannon-es';
 import Stats from 'three/examples/jsm/libs/stats.module.js';
+import WebGL from 'three/addons/capabilities/WebGL.js';
+
 
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(100, window.innerWidth / window.innerHeight, 0.1, 1000);
